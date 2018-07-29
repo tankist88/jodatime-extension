@@ -1,13 +1,12 @@
-package org.object2source.extension.jodatime;
+package com.github.tankist88.extension.jodatime;
 
+import com.github.tankist88.object2source.dto.InstanceCreateData;
+import com.github.tankist88.object2source.dto.ProviderInfo;
+import com.github.tankist88.object2source.extension.AbstractEmbeddedExtension;
 import org.joda.time.DateTime;
-import org.object2source.dto.InstanceCreateData;
-import org.object2source.dto.ProviderInfo;
-import org.object2source.extension.AbstractEmbeddedExtension;
 
 import java.util.Set;
 
-// org.joda.time.DateTime
 public class DateTimeExtension extends AbstractEmbeddedExtension {
     @Override
     public boolean isTypeSupported(Class<?> clazz) {

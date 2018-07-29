@@ -1,13 +1,13 @@
-package org.object2source.extension.jodatime;
+package com.github.tankist88.extension.jodatime;
 
+import com.github.tankist88.object2source.dto.ProviderInfo;
+import com.github.tankist88.object2source.extension.AbstractEmbeddedExtension;
 import org.joda.time.PeriodType;
-import org.object2source.dto.ProviderInfo;
-import org.object2source.extension.AbstractEmbeddedExtension;
-import org.object2source.util.GenerationUtil;
 
 import java.util.Set;
 
-// org.joda.time.PeriodType
+import static com.github.tankist88.object2source.util.GenerationUtil.downFirst;
+
 public class PeriodTypeExtension extends AbstractEmbeddedExtension {
     @Override
     public boolean isTypeSupported(Class<?> clazz) {
@@ -17,7 +17,7 @@ public class PeriodTypeExtension extends AbstractEmbeddedExtension {
     @Override
     public void fillMethodBody(StringBuilder bb, Set<ProviderInfo> providers, int objectDepth, Object obj) throws Exception {
         PeriodType value = (PeriodType) obj;
-        bb.append(getTabSymb()).append(getTabSymb()).append("return org.joda.time.PeriodType.").append(GenerationUtil.downFirst(value.getName())).append("();\n");
+        bb.append(getTabSymb()).append(getTabSymb()).append("return org.joda.time.PeriodType.").append(downFirst(value.getName())).append("();\n");
     }
 
     @Override

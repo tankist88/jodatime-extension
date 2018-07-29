@@ -4,13 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.object2source</groupId>
+    <groupId>com.github.tankist88</groupId>
     <artifactId>jodatime-extension</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <dependencies>
         <dependency>
-            <groupId>org.object2source</groupId>
+            <groupId>com.github.tankist88</groupId>
             <artifactId>object2source</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>provided</scope>
@@ -33,18 +33,6 @@
             <version>2.2.22</version>
             <scope>test</scope>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>org.object2source</groupId>-->
-            <!--<artifactId>object2source</artifactId>-->
-            <!--<version>0.0.1-SNAPSHOT</version>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>joda-time</groupId>-->
-            <!--<artifactId>joda-time</artifactId>-->
-            <!--<version>2.9.9</version>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
     </dependencies>
 
     <build>

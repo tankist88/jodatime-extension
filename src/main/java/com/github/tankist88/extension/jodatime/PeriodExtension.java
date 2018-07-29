@@ -1,14 +1,12 @@
-package org.object2source.extension.jodatime;
+package com.github.tankist88.extension.jodatime;
 
+import com.github.tankist88.object2source.dto.ProviderInfo;
+import com.github.tankist88.object2source.dto.ProviderResult;
+import com.github.tankist88.object2source.extension.AbstractEmbeddedExtension;
 import org.joda.time.Period;
-import org.joda.time.PeriodType;
-import org.object2source.dto.ProviderInfo;
-import org.object2source.dto.ProviderResult;
-import org.object2source.extension.AbstractEmbeddedExtension;
 
 import java.util.Set;
 
-// org.joda.time.Period
 public class PeriodExtension extends AbstractEmbeddedExtension {
     @Override
     public boolean isTypeSupported(Class<?> clazz) {

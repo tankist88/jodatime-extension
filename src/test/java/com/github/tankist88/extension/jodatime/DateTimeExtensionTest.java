@@ -1,8 +1,8 @@
-package org.object2source.extension.jodatime;
+package com.github.tankist88.extension.jodatime;
 
+import com.github.tankist88.object2source.SourceGenerator;
+import com.github.tankist88.object2source.dto.ProviderResult;
 import org.joda.time.DateTime;
-import org.object2source.SourceGenerator;
-import org.object2source.dto.ProviderResult;
 import org.testng.annotations.Test;
 
 import java.util.Calendar;
