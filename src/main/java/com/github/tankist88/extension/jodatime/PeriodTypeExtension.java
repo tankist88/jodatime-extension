@@ -15,9 +15,14 @@ public class PeriodTypeExtension extends AbstractEmbeddedExtension {
     }
 
     @Override
-    public void fillMethodBody(StringBuilder bb, Set<ProviderInfo> providers, int objectDepth, Object obj) throws Exception {
+    public boolean isFillingSupported() {
+        return false;
+    }
+
+    @Override
+    public String getMethodBody(Set<ProviderInfo> providers, int objectDepth, Object obj, boolean fillObj) {
         PeriodType value = (PeriodType) obj;
-        bb.append(getTabSymb()).append(getTabSymb()).append("return org.joda.time.PeriodType.").append(downFirst(value.getName())).append("();\n");
+        return getTabSymb() + getTabSymb() + "return org.joda.time.PeriodType." + downFirst(value.getName()) + "();\n";
     }
 
     @Override

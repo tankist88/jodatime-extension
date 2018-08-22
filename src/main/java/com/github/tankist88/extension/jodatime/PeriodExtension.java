@@ -14,7 +14,12 @@ public class PeriodExtension extends AbstractEmbeddedExtension {
     }
 
     @Override
-    public void fillMethodBody(StringBuilder bb, Set<ProviderInfo> providers, int objectDepth, Object obj) throws Exception {
+    public boolean isFillingSupported() {
+        return false;
+    }
+
+    @Override
+    public String getMethodBody(Set<ProviderInfo> providers, int objectDepth, Object obj, boolean fillObj) {
         Period value = (Period) obj;
 
         int years = value.getYears();
@@ -30,17 +35,17 @@ public class PeriodExtension extends AbstractEmbeddedExtension {
 
         providers.addAll(generatedPeriodType.getProviders());
 
-        bb  .append(getTabSymb()).append(getTabSymb()).append("return new org.joda.time.Period(")
-            .append(years).append(", ")
-            .append(months).append(", ")
-            .append(weeks).append(", ")
-            .append(days).append(", ")
-            .append(hours).append(", ")
-            .append(minutes).append(", ")
-            .append(seconds).append(", ")
-            .append(millis).append(", ")
-            .append(generatedPeriodType.getEndPoint().getMethodName())
-            .append(");\n");
+        return getTabSymb() + getTabSymb() +
+                "return new org.joda.time.Period(" +
+                years + ", " +
+                months + ", " +
+                weeks + ", " +
+                days + ", " +
+                hours + ", " +
+                minutes + ", " +
+                seconds + ", " +
+                millis + ", " +
+                generatedPeriodType.getEndPoint().getMethodName() + ");\n";
     }
 
     @Override

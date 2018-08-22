@@ -14,14 +14,19 @@ public class DateTimeExtension extends AbstractEmbeddedExtension {
     }
 
     @Override
-    public void fillMethodBody(StringBuilder bb, Set<ProviderInfo> providers, int objectDepth, Object obj) throws Exception {
+    public boolean isFillingSupported() {
+        return false;
+    }
+
+    @Override
+    public String getMethodBody(Set<ProviderInfo> providers, int objectDepth, Object obj, boolean fillObj) throws Exception {
         DateTime value = (DateTime) obj;
 
         InstanceCreateData instanceCreateData = sourceGenerator.getInstanceCreateData(value.toGregorianCalendar(), objectDepth);
 
         providers.addAll(instanceCreateData.getDataProviderMethods());
 
-        bb.append(getTabSymb()).append(getTabSymb()).append("return new org.joda.time.DateTime(").append(instanceCreateData.getInstanceCreator()).append(");\n");
+        return getTabSymb() + getTabSymb() + "return new org.joda.time.DateTime(" + instanceCreateData.getInstanceCreator() + ");\n";
     }
 
     @Override
